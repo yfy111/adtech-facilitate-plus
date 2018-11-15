@@ -1,0 +1,289 @@
+#navbar{
+
+    background: url("../login/image/bg.jpg");
+    background-repeat: repeat;
+}
+
+a {
+    cursor:pointer;
+}
+.img{
+    border:1px solid;
+    box-shadow: none;
+    box-sizing: border-box;
+    vertical-align: middle;
+    border-radius: 4px;
+    height: 201px;
+    width: 240px;
+    display: table-cell;
+    text-align: center;
+}
+.table.table-no-bordered{
+    margin-top: 5px;
+}
+.table.table-no-bordered thead tr th{
+    background-color: #e8e8e8;
+}
+.myTabs.nav > li > a:hover,
+.myTabs.nav > li > a:focus{
+    background-color: #cccccc;
+    color: #333333;
+}
+
+.myTabs.nav > li > a{
+    /*font-weight: 800;*/
+    background-color: #e3e3e3;
+    color: #606060;
+}
+
+.myTabs.nav > li.active > a:hover,
+.myTabs.nav > li.active > a:focus,
+.myTabs.nav > li.active > a{
+    background-color: #5ec2db;
+    color: #ffffff;
+}
+
+.healthInformation{
+    table-layout: fixed;
+}
+.healthInformation tr td{
+    text-overflow: ellipsis; /* for IE */
+    -moz-text-overflow: ellipsis; /* for Firefox,mozilla */
+    overflow: hidden;
+    white-space: nowrap;
+    border: 1px solid;
+    text-align: left;
+    border-bottom-color: #CCCCCC;
+    text-decoration:none;
+}
+
+
+.healthInformation .tableMore{
+    text-decoration:none;
+    color: #000000;
+}
+.healthInformation .tableMore:hover{
+    text-decoration:none;
+    color: #000000;
+}
+.more{
+    float: right;
+    margin-top: 5px;
+    color: #999999;
+    text-decoration:none;
+}
+
+.more:hover{
+    color: #999999;
+    text-decoration:none;
+}
+
+.menu{
+    padding: 20px 0 120px 0;
+    background: -webkit-gradient(linear, 0 0, 0 0, from(#84dcf3), to(#3badca));
+    background: -webkit-linear-gradient(top,#84dcf3, #3badca, #3badca);
+    background: -moz-linear-gradient(top,#84dcf3, #3badca, #3badca);
+    background: -o-linear-gradient(top,#84dcf3, #3badca, #3badca);
+    background: -ms-linear-gradient(top,#84dcf3, #3badca, #3badca);
+    background: linear-gradient(top,#84dcf3, #3badca, #3badca);
+    //FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#84dcf3,endColorStr=#3badca);
+}
+
+.menuHead{
+    /*color: #ffffff;*/
+    padding: 5px 20px;
+}
+
+.menuHead span:first-child{
+
+}
+
+.menu ul li{
+    margin-bottom: 1px;
+}
+.menu ul li img{
+    width: 15px;
+    height: 14px;
+    margin-right: 5px;
+}
+.menu ul li a{
+    color: #fff;
+}
+.menu ul li a:hover{
+    color: #fff;
+    background-color: #238ba6;
+}
+/*  首页样式 */
+.container-fluid{
+    padding: 0;
+    margin: 0;/*
+    background: url("/login/image/bg.jpg");
+    background-repeat: repeat;*/
+}
+.header{
+    width: 100%;
+    background: #fff;
+}
+.myHeader{
+    width:1200px;
+    margin:0 auto;
+    height: 70px;
+}
+.header-right{
+    float: right;
+}
+.header-right div{
+    display: inline-block;
+}
+.header-right .header-icon{
+    width: 80px;
+    text-align: center;
+}
+.header-right .header-icon i{
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin:4px auto 0 auto;
+    -webkit-animation-duration: 0s;
+    -moz-animation-duration: 0s;
+    -o-animation-duration: 0s;
+    animation-duration: 0s;
+    background: #4cadc5;
+    border-radius: 50%;
+    margin-top: 8px;
+    color:#fff;
+}
+.content-box,.main-container{
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.content-box .col-sm-6{
+    background: #fff;
+    width: 552px;
+    height: 234px;
+    border-radius: 5px;
+}
+.myTabs li{
+    width: 125px;
+    height: 36px;
+    text-align: center;
+}
+.myTabs{
+    margin-top: 12px;
+    margin-bottom: 7px;
+}
+.myTabs li a{
+    padding: 7px 15px;
+}
+.nav-tabs{
+   border:none;
+}
+.clearfix{
+    overflow: hidden;
+    zoom: 1;
+}
+.step-box .clearfix{
+    padding-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.step-box .clearfix .list-icon{
+    float: left;
+    position: relative;
+    min-width: 60px;
+    min-height: 60px;
+    text-align: center;
+    cursor: pointer;
+}
+.step-box .clearfix .list-icon:first-child .list-icon-span{
+    width: 10px;
+    height: 10px;
+    background: #e3ebf0;
+    border-radius: 50%;
+    margin-left: 0;
+    margin-top: 9px;
+    border:none;
+}
+.step-box .clearfix .list-icon:first-child i{
+    width: 30px;
+    top: 12px;
+    left: 10px;
+}
+.step-box .clearfix .list-icon-span{
+    width: 25px;
+    height: 25px;
+    background: #5ec2db;
+    border: 1px #49a3b9 solid;
+    border-radius: 50%;
+    margin-left: 82px;
+}
+.step-box .clearfix i{
+    width: 112px;
+    height: 3px;
+    background: #e3ebf0;
+    position: absolute;
+    top: 12px;
+    left: 25px;
+}
+.step-box .clearfix .active .list-icon-span{
+    width: 70px;
+    height: 70px;
+    margin-top: -20px;
+}
+.step-box .clearfix .active i{
+    left: 156px!important;
+}
+.step-box .clearfix .active  .text{
+    display: none;
+}
+.step-box .clearfix .active  .list-icon-span span{
+    display: inline-block;
+    line-height: 70px;
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+}
+.step-box .clearfix .list-icon-span span{
+    display: none;
+}
+
+/*开关*/
+.switchclass {
+    position: relative;
+    /*position: absolute;
+    top: -20px;
+    right: 0;*/
+    width: 79px;
+    height: 45px;
+    line-height: 0;
+
+}
+.switchclass .toggle{
+    position: absolute;
+    opacity: 0;
+    width: 79px;
+    height: 45px;
+    z-index: 2;
+}
+.switchclass .iconfont{
+    position: absolute;
+    top: 20px;
+}
+.switchclass .icon-kaiguan-guan {
+    font-size: 60px;
+    color: #bebebe;
+}
+
+.switchclass .icon-kaiguan-kai {
+    font-size: 60px;
+    color: #2EB6FF;
+
+}
+
+ .tantable,tbody{
+     /*display: inline-block;*/
+     width: 100%;
+ }
+.tantable td{padding: 10px 5px;}
+.tantable h2{text-align: center;}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/static/custom/css/page.css}" />
+
+<input type="hidden" th:value="${page.totalCount}" class="current-page-totalCount" />
+<input type="hidden" th:value="${page.pageNum}" class="current-page-pageNum" />
+<input type="hidden" th:value="${page.getLast()}" class="current-page-lastNum" />
+
+<div class="page-button-container">
+	<a href="javascript:" th:value="${page.getFirst()}" onclick="toPage(this)">首页</a>
+	<a href="javascript:" th:value="${page.getFront()}" onclick="toPage(this)">上一页</a>
+	<a th:text="${page.pageNum + '/' + page.getLast()}"></a>
+	<a href="javascript:" th:value="${page.getNext()}" onclick="toPage(this)">下一页</a>
+	<a href="javascript:" th:value="${page.getLast()}" onclick="toPage(this)">尾页</a>
+</div>
+
+<script>
+    function toPage(a) {
+        var index = $(a).attr('value');
+        jumpPage(index);
+    }
+
+    // function jumpFirst() {
+    //     jumpPage(1);
+    // }
+    //
+    // function jumpFront() {
+    //     var index = $('.current-page-pageNum').val();
+    //     if (index > 1) {
+    //         index = index - 1;
+    //     }
+    //     jumpPage(index);
+    // }
+    //
+    // function jumpNext() {
+    //     var index = $('.current-page-pageNum').val();
+    //     var last = $('.current-page-lastNum').val();
+    //     if (index < last) {
+    //         index = last - 0 + 1;
+    //     }
+    //     jumpPage(index);
+    // }
+    //
+    // function jumpLast() {
+    //     var index = $('.current-page-lastNum').val();
+    //     jumpPage(index);
+    // }
+</script>
+</html>

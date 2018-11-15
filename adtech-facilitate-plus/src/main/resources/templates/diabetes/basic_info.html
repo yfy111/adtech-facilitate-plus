@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/static/custom/css/medical_information/basic_info.css}" />
+
+<table th:object="${info}" class="layui-table info_basic_info_data" lay-size="lg">
+	<tbody>
+		<tr>
+			<td>健康档案编号</td>
+			<td th:text="*{hdsd0001001}"></td>
+			<td>本人姓名</td>
+			<td th:text="*{hdsd0001002}"></td>
+			<td>检查(测)日期</td>
+			<td th:text="*{hdsd0001466}"></td>
+		</tr>
+		<tr>
+			<td>身高(cm)</td>
+			<td th:text="*{hdsd0001055}"></td>
+			<td>体重(kg)</td>
+			<td th:text="*{hdsd0001056}"></td>
+			<td>目标体重(kg)</td>
+			<td th:text="*{hdsd0001209}"></td>
+		</tr>
+		<tr>
+			<td>日吸烟量(支)</td>
+			<td th:text="*{hdsd0001071}"></td>
+			<td>日饮酒量(两)</td>
+			<td th:text="*{hdsd0001075}"></td>
+			<td>日主食量(g)</td>
+			<td th:text="*{hdsd0001486}"></td>
+		</tr>
+		<tr>
+			<td>收缩压(mmHg)</td>
+			<td th:text="*{hdsd0001342}"></td>
+			<td>舒张压(mmHg)</td>
+			<td th:text="*{hdsd0001343}"></td>
+			<td>目标日主食量(g)</td>
+			<td th:text="*{hdsd0001487}"></td>
+		</tr>
+		<tr>
+			<td>症状名称</td>
+			<td th:text="*{hdsd0001047}"></td>
+			<td>运动时长(min)</td>
+			<td th:text="*{hdsd0001066}"></td>
+			<td>体质指数</td>
+			<td th:text="*{hdsd0001058}"></td>
+		</tr>
+		<tr>
+			<td>空腹血糖值(mmol/L)</td>
+			<td th:text="*{hdsd0001148}"></td>
+			<td>餐后两小时血糖值(mmol/L)</td>
+			<td th:text="*{hdsd0001149}"></td>
+			<td>糖化血红蛋白值(%)</td>
+			<td th:text="*{hdsd0001153}"></td>
+		</tr>
+		<tr>
+			<td>低血糖反应</td>
+			<td th:text="*{hdsd0001488}"></td>
+			<td>辅助检查项目</td>
+			<td th:text="*{hdsd0001478}"></td>
+			<td>辅助检查结果</td>
+			<td th:text="*{hdsd0001460}"></td>
+		</tr>
+		<tr>
+			<td>其他阳性体征</td>
+			<td th:text="*{hdsd0001469}"></td>
+			<td>药物名称</td>
+			<td th:text="*{hdsd0001194}"></td>
+			<td>药物使用频率</td>
+			<td th:text="*{hdsd0001195}"></td>
+		</tr>
+		<tr>
+			<td>药物使用剂量单位</td>
+			<td th:text="*{hdsd0001196}"></td>
+			<td>药物使用次剂量</td>
+			<td th:text="*{hdsd0001197}"></td>
+			<td>药物使用总剂量</td>
+			<td th:text="*{hdsd0001198}"></td>
+		</tr>
+		<tr>
+			<td>药物不良反应描述</td>
+			<td th:text="*{hdsd0001481}"></td>
+			<td>胰岛素用药种类</td>
+			<td th:text="*{hdsd0001489}"></td>
+			<td>胰岛素用药使用频率(次/d)</td>
+			<td th:text="*{hdsd0001490}"></td>
+		</tr>
+		<tr>
+			<td>胰岛素用药次剂量(U)</td>
+			<td th:text="*{hdsd0001491}"></td>
+			<td>随访方式</td>
+			<td th:text="*{hdsd0001467}"></td>
+			<td>检查(测)人员姓名</td>
+			<td th:text="*{hdsd0001479}"></td>
+		</tr>
+		<tr>
+			<td>随访医师姓名</td>
+			<td th:text="*{hdsd0001330}"></td>
+			<td>本次随访日期</td>
+			<td th:text="*{hdsd0001466}"></td>
+			<td>下次随访日期</td>
+			<td th:text="*{hdsd0001483}"></td>
+		</tr>
+	</tbody>
+</table>
+</html>

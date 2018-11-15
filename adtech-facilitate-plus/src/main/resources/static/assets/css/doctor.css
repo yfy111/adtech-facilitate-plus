@@ -1,0 +1,57 @@
+body {
+    padding: 20px;
+}
+
+.title {
+    color: #4CADC5;
+    font-size: 25px;
+}
+
+.title p {
+    float: left;
+    margin-right: 10px;
+}
+
+.main-content {
+    border: 1px gray solid;
+    padding: 15px;
+}
+
+.basic-info .table-title {
+    padding: 10px 0;
+    border-bottom: 1px gray solid;
+    margin-bottom: 10px;
+}
+
+.basic-info table {
+    width: 100%;
+    margin: auto;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.basic-info table tr {
+    margin-bottom: 5px;
+}
+
+.space-th {
+    height: 10px;
+}
+
+.basic-info table td {
+    width: 8.33%;
+    height: 36px;
+    border: 1px lightgrey solid;
+}
+
+.middle-title {
+    padding: 8px 0;
+    text-align: center;
+    background-color: rgb(24, 154, 202);
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.layui-form-item {
+}

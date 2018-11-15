@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<table class="layui-table member-list-table">
+	<thead>
+	<tr>
+		<td>称谓</td>
+		<td>姓名</td>
+		<td>联系电话</td>
+	</tr>
+	</thead>
+	<tbody>
+	<tr th:each="e:${list}">
+		<td th:text="*{e.appellation}"></td>
+		<td th:text="*{e.familyUsername}"></td>
+		<td th:text="*{e.familyUserphone}"></td>
+	</tr>
+	</tbody>
+</table>
+</html>

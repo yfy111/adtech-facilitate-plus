@@ -1,0 +1,73 @@
+.newborn-followup-object{
+    display:inline-block;
+    border-left: 1px dashed #c9dbec;
+    font-size: 14px;
+}
+.newborn-followup-object .newborn-followup-cell {
+    float: left;
+    width: 33%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 12px;
+    border-top: 1px dashed #c9dbec;
+    font-size: 14px;
+}
+
+.newborn-followup-object .newborn-followup-cell .title {
+    float: left;
+    text-align: center;
+    border-right: 1px dashed #c9dbec;
+}
+
+.newborn-followup-object .newborn-followup-cell .twidth1 {
+    width: 150px;
+    background: #f7f7f7;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.newborn-followup-object .newborn-followup-cell .twidth2 {
+    width: 301px;
+}
+
+.newborn-followup-object .newborn-followup-cell .twidth3 {
+    width: 452px;
+}
+
+.newborn-followup-object .newborn-followup-cell .twidth4 {
+    width: 603px;
+}
+
+.newborn-followup-object .newborn-followup-cell .twidth5 {
+    width: 750px;
+}
+
+.newborn-followup-object .newborn-followup-cell .width1 {
+    width: 150px;
+}
+
+.newborn-followup-object .newborn-followup-cell .width2 {
+    width: 301px;
+}
+
+.newborn-followup-object .newborn-followup-cell .width3 {
+    width: 452px;
+}
+
+.newborn-followup-object .newborn-followup-cell .width4 {
+    width: 653px;
+}
+
+.newborn-followup-object .newborn-followup-cell .width5 {
+    width: 754px;
+}
+
+
+.newborn-followup-object .newborn-followup-cell .content {
+    float: right;
+    width: 150px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    border-right: 1px dashed #c9dbec;
+}

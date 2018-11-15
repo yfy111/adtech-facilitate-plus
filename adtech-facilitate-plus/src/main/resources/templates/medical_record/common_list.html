@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<form class="layui-form" action="">
+	<div class="layui-form-item" style="margin-top: 15px;">
+		<label class="layui-form-label" style="width: auto;padding-left:0;">类别</label>
+		<div class="layui-input-inline">
+			<select class="medical-information-selected-date">
+				<option th:each="e:${date}" th:text="*{e.typeName}" th:value="*{e.typeValue}"></option>
+			</select>
+		</div>
+	</div>
+</form>
+<script>
+    layui.use('form', function () {
+        var form = layui.form;
+        form.render();
+    });
+</script>
+</html>

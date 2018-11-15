@@ -1,0 +1,37 @@
+.login-content {
+    background: url("../assets/image/bg.jpg") no-repeat;
+    background-size: cover;
+}
+
+.common-width {
+    width: 70%;
+    margin: auto;
+}
+
+.login-header {
+    width: 100%;
+}
+
+.login-header img {
+    margin: 25px 0;
+}
+
+.login-content {
+    width: 100%;
+    height: available;
+}
+
+.login-footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: lightskyblue;
+}
+
+.login-footer-name-container {
+    margin: 25px auto;
+}
+
+.login-footer .login-footer-name {
+    text-align: center;
+}

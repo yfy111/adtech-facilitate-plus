@@ -1,0 +1,102 @@
+@charset "UTF-8";
+body{background: #ffffff; overflow-y: hidden;}
+.myHeader{
+    border-bottom: 2px solid #999999;
+}
+.myHeader span:first-child{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.myHeader span{
+    color:#217ca7;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: left;
+    line-height: normal;
+}
+.info{
+    margin: 20px 10px;
+    border: 1px solid #cccccc;
+    padding: 10px 20px;
+}
+
+.query-from span{
+    margin: 0px 10px;
+}
+
+.query-from select{
+    height: 25px;
+}
+
+.query-from #hospitalLevel,
+.query-from #hospitalType,
+.query-from #type{
+    width: 120px;
+    margin: 0px 10px;
+}
+.bootstrap-table table.diagnosisTable.table,
+.diagnosisTable tbody tr,
+.diagnosisTable tbody tr td,
+.bootstrap-table .diagnosisTable thead tr th
+{
+    border: 0px;
+}
+.diagnosisTable tbody tr td .mySpan{
+    display: inline-block;
+    margin: 0px;
+    cursor:pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */
+}
+
+/**
+    模态框
+ */
+.modal-title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 2em;
+}
+
+.modal-header{
+    border: 0px;
+}
+
+.borderBottom{
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+}
+
+.borderBottom tr td{
+    padding: 10px 0px;
+    font-size: 0.9em;
+}
+/*---浏览器--------*/
+
+::-webkit-scrollbar
+{
+    width: 6px;
+    height: 6px;
+    background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 2px;
+    background-color: #FFF;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #bbb;
+
+}

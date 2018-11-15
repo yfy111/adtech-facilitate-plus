@@ -1,0 +1,38 @@
+.identity-password-form-container {
+    width: 60%;
+    min-width: 400px;
+    margin: 30px auto auto;
+}
+
+.identity-password-form-container .image-captcha-container {
+    height: 37px;
+    width: 200px;
+    background-color: #1E9FFF;
+    float: left;
+    border-radius: 2px;
+}
+
+.identity-password-form-container .image-captcha-container:hover {
+    cursor: pointer;
+}
+
+.smsCaptcha-input {
+    width: 60%;
+}
+
+.smsCaptcha-button {
+    width: 40%;
+    height: 40px;
+    border-radius: 3px;
+}
+
+.action-button {
+    cursor: pointer;
+    background-color: #01AAED;
+}
+
+/*被禁用的按钮样式*/
+.disabled-button {
+    background-color: gray;
+    cursor: default;
+}

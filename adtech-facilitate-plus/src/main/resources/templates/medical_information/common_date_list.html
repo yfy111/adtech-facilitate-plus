@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<form class="layui-form" action="">
+	<div class="layui-form-item" style="margin-top: 15px;">
+		<label class="layui-form-label" style="width: auto;padding-left:0;">日期</label>
+		<div class="layui-input-inline">
+			<select class="medical-information-selected-date" lay-filter="date-select">
+				<option th:each="e:${date}" th:text="*{#strings.substring(e.typeName,0,10)}" th:value="*{e.typeValue}"></option>
+			</select>
+		</div>
+	</div>
+</form>
+<script>
+    layui.use('form', function () {
+        var form = layui.form;
+        form.render();
+
+        form.on('select(date-select)', function (data) {
+            var identity = currentSelectedIdentity();
+            var clazz = $(".check_select").find(".layui-this").attr("class");
+
+            if (clazz.indexOf("icon-show_view_base") >= 0) {
+                //健康档案
+                queryMedicalInformationBasicInfoData(identity);
+            } else if (clazz.indexOf("icon-show_view_new_birth") >= 0) {
+                //新生儿随访
+                queryNewbornFollowupData(identity);
+            } else if (clazz.indexOf("icon-show_view_birth_hypertension") >= 0) {
+                //高血压随访
+                queryMedicalInformationHypertensionData(identity)
+            } else if (clazz.indexOf("icon-show_view_birth_diabetes") >= 0) {
+                //糖尿病随访
+                queryMedicalInformationDiabetesData(identity);
+            }
+            // toFindData(url, data1);
+        });
+    });
+
+
+    /**
+     *  时间选择
+     */
+    $(".layui-tab-content").bind("change", ".medical-information-selected-date", function () {
+        console.log(2222);
+        var clazz = $(".check_select").find(".layui-this").attr("class");
+        var url = "";
+        var data = {};
+        var date = $(".medical-information-selected-date").val();
+        if (clazz.indexOf("icon-show_view_base") >= 0) {
+            //健康档案
+            url = "/web/medical-information/basic-info-data";
+            data = {"date": date};
+        } else if (clazz.indexOf("icon-show_view_new_birth") >= 0) {
+            //新生儿随访
+            url = "/web/medical-information/newborn-followup-data";
+            data = {"date": date};
+        } else if (clazz.indexOf("icon-show_view_birth_hypertension") >= 0) {
+            //高血压随访
+            url = "/web/hypertension/index";
+            data = {"date": date};
+        } else if (clazz.indexOf("icon-show_view_birth_diabetes") >= 0) {
+            //糖尿病随访
+            url = "/web/diabetes/index";
+            data = {"date": date};
+        }
+        toFindData(url, data);
+    })
+
+
+    function toFindData(url, data) {
+        $.ajax({
+            url: url,
+            method: 'get',
+            data: {},
+            success: function (data) {
+                alert(data);
+                $('.diabetes-info-data').html(data);
+            }
+        });
+    }
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/static/css/family_member.css}" />
+
+<table class="layui-table family-member-simple-list">
+	<thead>
+	<tr>
+		<td>称谓</td>
+		<td>姓名</td>
+		<td>联系电话</td>
+		<td>操作</td>
+	</tr>
+	</thead>
+	<tbody>
+	<tr th:each="e:${list}">
+		<td th:text="*{e.appellation}"></td>
+		<td th:text="*{e.familyUsername}"></td>
+		<td th:text="*{e.familyUserphone}"></td>
+		<td>
+			<a href="javascript:void(0);" onclick="changeUser(this)"  th:value="*{e.getFamilyUserId() + '-' + e.getAppellation()+ '-' + e.getExtmpi()}">查看档案</a>
+		</td>
+	</tr>
+	</tbody>
+</table>
+</html>

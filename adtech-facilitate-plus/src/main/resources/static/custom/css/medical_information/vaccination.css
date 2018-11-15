@@ -1,0 +1,19 @@
+.vaccination-userinfo-object {
+    padding: 3px 10px;
+    display: flex;
+}
+
+.vaccination-userinfo-object li {
+    float: left;
+    font-size: 13px;
+}
+
+.vaccination-userinfo-object li .title {
+    float: left;
+}
+
+.vaccination-userinfo-object li .content {
+    float: left;
+    padding-left: 10px;
+    margin-right: 10px;
+}

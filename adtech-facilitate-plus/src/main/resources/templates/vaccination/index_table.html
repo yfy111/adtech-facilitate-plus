@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div class="layui-row">
+    <table class="layui-table">
+        <tr>
+            <td>姓名</td>
+            <td th:text="*{base.hdsd0001002}"></td>
+            <td>性别</td>
+            <td th:text="*{base.hdsd0001003}"></td>
+            <td>出生日期</td>
+            <td th:text="*{base.hdsd0001004}"></td>
+        </tr>
+        <tr>
+            <td>现住地址</td>
+            <td th:text="*{base.exhdsd0001012}"></td>
+            <td>监护人姓名</td>
+            <td th:text="*{base.hdsd0001372}"></td>
+            <td>监护人与本人关系</td>
+            <td th:text="*{base.hdsd0001373}"></td>
+        </tr>
+    </table>
+</div>
+<div>
+    <table id="table_vaccination" lay-filter="test"> </table>
+</div>

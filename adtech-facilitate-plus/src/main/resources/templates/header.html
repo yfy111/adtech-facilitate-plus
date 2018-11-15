@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="setTitle(title)">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<title th:text="${title}"></title>
+	
+	<link rel="stylesheet" th:href="@{/static/layui/css/layui.css}" />
+	<link rel="stylesheet" th:href="@{/static/assets/css/style.css}" />
+	<link rel="stylesheet" th:href="@{/static/css/family_member.css}" />
+</head>

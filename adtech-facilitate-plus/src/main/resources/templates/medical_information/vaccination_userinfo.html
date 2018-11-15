@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/static/custom/css/medical_information/vaccination.css}" />
+
+<ul class="vaccination-userinfo-object">
+	<li th:each="e:${userinfo}" class="newborn-followup-cell">
+		<div class="title" th:text="*{e['title']}"></div>
+		<div class="content" th:text="*{e['content']}"></div>
+	</li>
+</ul>
+</html>

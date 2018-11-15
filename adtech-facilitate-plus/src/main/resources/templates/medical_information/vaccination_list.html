@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/static/custom/css/medical_information/vaccination.css}" />
+
+<table class="layui-table">
+	<thead>
+	<tr>
+		<td th:each="title:${page.getTitle()}" th:text="*{title}"></td>
+	</tr>
+	</thead>
+	
+	<tbody>
+	<tr th:each="row:${page.getData()}">
+		<td th:each="content:${row}" th:text="*{content}"></td>
+	</tr>
+	</tbody>
+	
+	<tfoot>
+	<tr>
+		<td th:colspan="${page.getTitle().size()}">
+			<div th:include="common_page"></div>
+		</td>
+	</tr>
+	</tfoot>
+</table>
+
+<script>
+    function jumpPage(index) {
+        var idCard = $("#selectedUserIdentity").val();
+        queryVaccinationList(idCard, index);
+    }
+</script>
+</html>

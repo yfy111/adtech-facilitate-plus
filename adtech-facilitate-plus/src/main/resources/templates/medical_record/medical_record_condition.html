@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div class="step-box">
+    <div class="clearfix">
+        <div class="list-icon">
+            <div class="list-icon-span">
+            </div>
+            <i></i>
+        </div>
+        <div class="list-icon" style="margin-left: -115px;text-align: right" id="childhood_name" name_value="童年"
+             onclick="liftCycleFrame('childhood')">
+            <div class="list-icon-span" style=" margin-left: 95px">
+                <span class="life_style_show">童年（0）</span>
+            </div>
+            <i style="    left: 120px;"></i>
+            <div class="text life_style_show" style="margin-left: 74px">童年（0）</div>
+        </div>
+        <div class="list-icon" onclick="liftCycleFrame('juvenile')" id="juvenile_name" name_value="少年">
+            <div class="list-icon-span" style="background: #2e987b;border-color: #4cc9a7">
+                <span class="life_style_show"> 少年（0）</span>
+            </div>
+            <i style="left: 111px;"></i>
+            <div class="text life_style_show" style="margin-left: 69px;color:#2e987b">
+                少年（0）
+            </div>
+        </div>
+        <div class="list-icon" onclick="liftCycleFrame('youth')" id="youth_name" name_value="青年">
+            <div class="list-icon-span" style="background: #c3a84b;border-color: #c3a84b">
+                <span class="life_style_show"> 青年（0）</span>
+            </div>
+            <i style="    left: 111px;"></i>
+            <div class="text life_style_show" style="margin-left: 69px;color:#c3a84b">
+                青年（0）
+            </div>
+        </div>
+        <div class="list-icon" onclick="liftCycleFrame('middleAge')" id="middleAge_name" name_value="中年">
+            <div class="list-icon-span" style="background: #ae62cb;border-color: #ae62cb">
+                <span class="life_style_show"> 中年（0）</span>
+            </div>
+            <i style="    left: 111px;"></i>
+            <div class="text life_style_show" style="margin-left: 69px;color: #ae62cb;">
+                中年（0）
+            </div>
+        </div>
+        <div class="list-icon" onclick="liftCycleFrame('old')" id="old_name" name_value="老年">
+            <div class="list-icon-span" style="background: #e78282;border-color: #cf6161">
+                <span class="life_style_show">老年(0)</span>
+            </div>
+            <i style="    left: 111px;"></i>
+            <div class="text life_style_show" style="margin-left: 69px; color: #e78282;">
+                老年（0）
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<ul class="medical-record-condition-life">-->
+<!--<li th:each="life:${life}">-->
+<!--<button th:text="*{life.desc}" class="layui-btn layui-btn-lg layui-btn-normal layui-btn-radius"></button>-->
+<!--</li>-->
+<!--</ul>-->
+<form class="layui-form medical_form" action="">
+    <div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">就诊日期</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" id="medical-record-date-scope" placeholder=" 至 ">
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <select name="hospitalCode" id="hospitalName">
+                    <option value="">请选择就诊医院</option>
+                    <option th:each="e:${condition['hspName']}" th:text="*{e.typeName}"
+                            th:value="*{e.typeValue}"></option>
+                </select>
+            </div>
+
+            <div class="layui-inline">
+                <select name="visitType" id="visitType">
+                    <option value="">请选择记录类型</option>
+                    <option th:each="e:${condition['btlType']}" th:text="*{e.typeName}"
+                            th:value="*{e.typeName}"></option>
+                </select>
+            </div>
+            <div class="layui-inline">
+                <button type="button" class="layui-btn layui-btn-lg query_btn_all">查询</button>
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" name="beginDate" id="medical-record-condition-beginDate"/>
+    <input type="hidden" name="endDate" id="medical-record-condition-endDate"/>
+    <input type="hidden" name="cycleType" id="medical-record-condition-cycleType"/>
+    <input type="hidden" name="life_value" id="medical-record-condition-life_value"/>
+    <input type="hidden" name="lifeValue" th:each="e:${condition['life']}" th:value="*{e.typeName}"
+           th:class="*{e.typeValue+'_name'}"/>
+</form>
+
+<script>
+    layui.use(['laydate', 'form'], function () {
+        var laydate = layui.laydate;
+        var layform = layui.form;
+
+        // 渲染表单
+        layform.render();
+
+        //日期范围
+        laydate.render({
+            elem: '#medical-record-date-scope',
+            range: true,
+            change: function (value, date, endDate) {
+                $("#medical-record-condition-beginDate").val(value.split(" - ")[0]);
+                $("#medical-record-condition-endDate").val(value.split(" - ")[1])
+                console.log(value); //得到日期生成的值，如：2017-08-18
+                // 将value拆分为起始和截止2个日期
+
+            }
+        });
+    });
+
+    /**
+     * 查询事件
+     */
+    $(".query_btn_all").click(function () {
+        find();
+    });
+
+    function find() {
+        // 查询就诊记录的列表页面
+        var val = {
+            hospitalName: $('#hospitalName').val(),
+            identityCard: $('#selectedUserIdentity').val(),
+            beginDate: $('#medical-record-condition-beginDate').val(),
+            endDate: $('#medical-record-condition-endDate').val(),
+            visitType: $('#visitType').val(),
+            cycleType:$('#medical-record-condition-life_value').val()
+        };
+        $.ajax({
+            url: '/web/medical-record/list',
+            method: 'post',
+            data: val,
+            success: function (data) {
+                $('.medical-record-data').html(data);
+            }
+        });
+    }
+
+    function loadLife() {
+        $(".medical_form input[name=lifeValue]").each(function () {
+            var th = $(this);
+            var clazz = th.attr("class");
+            var id = $("#" + clazz);
+            var name = id.attr("name_value");
+            id.find(".life_style_show").html(name + "(" + th.val() + ")");
+        })
+    }
+
+    loadLife();
+
+    function liftCycleFrame(val) {
+        $("#medical-record-condition-life_value").val(val);
+        find();
+    }
+</script>
+</html>

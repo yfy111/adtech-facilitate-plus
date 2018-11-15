@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/static/custom/css/medical_information/basic_info.css}" />
+
+<table th:object="${info}" style="table-layout: fixed;border: 1px dashed #c9dbec;" align="left" class="table table-hover table-striped medical_info_basic_info_data">
+	<tbody>
+	<tr th:height="60">
+		<th>城乡居民健康档案编号</th>
+		<td colspan="5" th:text="*{hdsd0001001}"></td>
+	</tr>
+	<tr th:height="60">
+		<th width="150" style="padding-left: 10px;">姓名</th>
+		<td width="150" style="padding-left: 10px;" th:text="*{hdsd0001002}"></td>
+		<th width="150" style="padding-left: 10px;">性别</th>
+		<td width="150" style="padding-left: 10px;" th:text="*{hdsd0001003}"></td>
+		<th width="150" style="padding-left: 10px;">出生日期</th>
+		<td width="150" style="padding-left: 10px;" th:text="*{hdsd0001004}"></td>
+	</tr>
+	<tr th:height="60">
+		<th>证件类型</th>
+		<td th:text="*{hdsd0001005}"></td>
+		<th>身份证号码</th>
+		<td th:text="*{hdsd0001006}" colspan="3"></td>
+	</tr>
+	<tr th:height="60">
+		<th>电话号码</th>
+		<td th:text="*{hdsd0001008}"></td>
+		<th>建档人</th>
+		<td th:text="*{exhdsd0001022}"></td>
+		<th>建档单位</th>
+		<td th:text="*{exhdsd0001027}"></td>
+	</tr>
+	</tbody>
+</table>
+</html>

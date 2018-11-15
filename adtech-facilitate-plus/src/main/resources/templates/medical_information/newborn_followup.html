@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/static/custom/css/medical_information/newborn_followup_ul.css}" />
+
+<ul class="newborn-followup-object">
+	<li th:each="e:${info}" class="newborn-followup-cell">
+		<div th:class="*{'title twidth'+e['titleWidth']}" th:text="*{e['title']}"></div>
+		<div th:class="*{'width' + e['width'] + ' ' + 'content'}" th:text="*{e['content']}"></div>
+	</li>
+	<li>
+		<div style="border-bottom: 1px gray solid;width: 905px;float: left"></div>
+	</li>
+</ul>
+</html>

@@ -1,0 +1,20 @@
+#feedback-question-add-form {
+    width: 96%;
+}
+
+#feedback-question-add-form .image-captcha-input {
+    width: 60%;
+    float: left;
+}
+
+#feedback-question-add-form .image-captcha-img {
+    height: 38px;
+    width: 100px;
+    padding-left: 10px;
+    float: left;
+    vertical-align: baseline;
+}
+
+#feedback-question-add-form .image-captcha-img:hover {
+    cursor: pointer;
+}

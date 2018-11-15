@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="header::setTitle('我的健康档案')"></head>
+<link rel="stylesheet" th:href="@{/static/custom/css/login.css}" />
+
+<body>
+<div class="top">
+	<div class="main">
+		<div class="logo"></div>
+	</div>
+</div>
+
+<div class="login-center">
+	<div class="loginbigbox">
+		<div class="login-left">
+			<p class="blue">温馨提示：</p>
+			<p class="content">1、数据查询范围仅限于健康档案个人基本信息、出生医学证明、预防接种、新生儿家庭访视、高血压患者随访服务、2型糖尿病患者随访服务、门诊病历、检查报告、检验报告、中药处方、西药处方、住院病案首页。其它就诊信息将后期逐步开放。</p>
+			<p class="content">2、本数据来源于基层公卫和医疗服务机构，仅提供个人健康管理参考，不作为诊疗活动、医疗鉴定、法律纠纷等使用。</p>
+		</div>
+		<div class="login-right">
+			<div class="login-right-name blue">我的健康档案</div>
+			<div class="layui-tab">
+				<ul class="layui-tab-title login-tab-head">
+					<li class="one layui-this"><i></i>身份证验证登录</li>
+					<li class="two"><i></i>账号登录</li>
+				</ul>
+				
+				<ul class="login-tab-main layui-tab-content">
+					<!-- 姓名、身份证、手机、短信验证码登录 -->
+					<li class="layui-tab-item layui-show smsCaptcha-login-container">
+						<div class="inputbox">
+							<input class="imglabel-user" name="realName" th:value="${login.realName}" autocomplete="false" placeholder="请输入姓名">
+						</div>
+						<div class="inputbox">
+							<input class="imglabel-ID" name="identity" th:value="${login.identity}" placeholder="请输入身份证">
+						</div>
+						<div class="inputbox">
+							<input class="imglabel-phone" name="phone" th:value="${login.phone}" placeholder="请输入手机号">
+						</div>
+						<div class="inputbox">
+							<input class="imglabel-code smsCaptcha-input" style="width: 60%;" name="smsCaptcha" th:value="${login.smsCaptcha}" placeholder="请输入验证码">
+							<button type="button" class="smsCaptcha-button action-button" onclick="sendSmsCaptcha()">获取短信验证码</button>
+						</div>
+						<div class="jizhupsw">
+							<input type="checkbox" id="form1-checkbox" lay-skin="primary" onchange="controlSubmitButton(this,'#login1-submit-button')">
+							<label for="form1-checkbox">选中表示已阅读<span class="font-blue">《隐私保护》</span>，并同意条款有关隐私保护要求。</label>
+						</div>
+						<button class="login-btn action-button disabled-button" disabled="disabled" id='login1-submit-button' type="button" onclick="smsCaptchaLogin()">登录</button>
+					</li>
+					
+					<!-- 姓名、身份证、查询密码登录 -->
+					<li class="layui-tab-item password-login-container">
+						<div class="inputbox">
+							<input class="imglabel-user" name="realName" th:value="${login.realName}" autocomplete="false" placeholder="请输入姓名">
+						</div>
+						<div class="inputbox">
+							<input class="imglabel-ID" name="identity" th:value="${login.identity}" placeholder="请输入身份证">
+						</div>
+						<div class="inputbox">
+							<input class="imglabel-password" type="password" name="password" th:value="${login.password}" placeholder="请输入密码">
+						</div>
+						<div class="inputbox">
+							<input class="imglabel-code image-captcha-code" style="width: 60%;" name="smsCaptcha" th:value="${login.imageCaptcha}" placeholder="请输入验证码">
+							<a href="javascript:void(0);" onclick="changeImageCaptcha2()"><img id="captchaImg" src="/captcha/image2"  class="image-captcha-img" /></a>
+						</div>
+						<div class="jizhupsw">
+							<input type="checkbox" id="form2-checkbox" lay-skin="primary" onchange="controlSubmitButton(this,'#login2-submit-button')">
+							<label for="form2-checkbox">选中表示已阅读<span class="font-blue">《隐私保护》</span>，并同意条款有关隐私保护要求。</label>
+						</div>
+						<button class="login-btn action-button disabled-button" id="login2-submit-button" disabled="disabled" type="button" onclick="passwordLogin()">登录</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="foot">
+		<div class="main">
+			<p>主办单位：重庆市卫生健康委员会</p>
+			<p>技术支持单位：重庆亚德科技股份有限公司</p>
+		</div>
+	</div>
+</div>
+
+<div th:include="footer::js"></div>
+<script th:src="@{/static/assets/js/login.js}"></script>
+</body>
+</html>

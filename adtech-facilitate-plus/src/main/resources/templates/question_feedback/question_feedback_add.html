@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/static/assets/css/feedback_question.css}" />
+
+<form class="layui-form" id="feedback-question-add-form">
+	<div class="layui-form-item">
+		<label class="layui-form-label">问题类别</label>
+		<div class="layui-input-block">
+			<input th:each="t:${types}" type="checkbox" class="question-type" name="questionType" th:value="*{t.getDesc()}" th:title="*{t.getDesc()}" lay-skin="primary" />
+		</div>
+	</div>
+	
+	<div class="layui-form-item">
+		<label class="layui-form-label">问题描述</label>
+		<div class="layui-input-block">
+			<textarea name="questionDesc" placeholder="问题描述" class="layui-textarea question-desc"></textarea>
+		</div>
+	</div>
+	
+	<div class="layui-form-item">
+		<label class="layui-form-label">验证码</label>
+		<div class="layui-input-block">
+			<input placeholder="请输入验证码" name="imageCaptcha" class="layui-input image-captcha-input">
+			<img src="/captcha/image" class="image-captcha-img" onclick="changeImageCaptcha()" />
+		</div>
+	</div>
+	
+	<div class="layui-form-item">
+		<div class="layui-input-block" style="text-align: right;">
+			<button type="button" class="layui-btn layui-btn-primary" onclick="closeAddQuestion()">退出</button>
+			<button type="button" class="layui-btn" onclick="submitFeedbackQuestion()">提交</button>
+		</div>
+	</div>
+</form>
+
+<script>
+    layui.use('form', function () {
+        var form = layui.form;
+        form.render();
+    });
+</script>
+</html>

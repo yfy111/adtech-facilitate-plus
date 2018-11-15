@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/static/custom/css/medical_information/birth_certificate.css}" />
+
+<table th:object="${info}" class="medical-info-birth-certificate" lay-size="lg">
+	<tbody>
+	<tr th:height="50">
+		<th th:width="150">新生儿姓名</th>
+		<td th:width="150" th:text="*{exhdsd0001003}"></td>
+		<th th:width="150">新生儿性别</th>
+		<td th:width="150" th:text="*{exhdsd0001004}"></td>
+		<th th:width="150">新生儿出生时间</th>
+		<td th:width="150" th:text="*{exhdsd0001005}"></td>
+	</tr>
+	<tr th:height="50">
+		<th>母亲姓名</th>
+		<td th:text="*{exhdsd0001016}"></td>
+		<th>母亲年龄</th>
+		<td th:text="*{exhdsd0001019}"></td>
+		<th>母亲国籍</th>
+		<td th:text="*{exhdsd0001020}"></td>
+	</tr>
+	<tr th:height="50">
+		<th>母亲民族</th>
+		<td th:text="*{exhdsd0001021}"></td>
+		<th>父亲姓名</th>
+		<td th:text="*{exhdsd0001029}"></td>
+		<th>父亲年龄</th>
+		<td th:text="*{exhdsd0001031}"></td>
+	</tr>
+	<tr th:height="50">
+		<th>父亲国籍</th>
+		<td th:text="*{exhdsd0001032}"></td>
+		<th>父亲民族</th>
+		<td th:text="*{exhdsd0001033}"></td>
+		<th>母亲出生日期</th>
+		<td th:text="*{exhdsd0001018}"></td>
+	</tr>
+	<tr th:height="50">
+		<th>母亲户籍所在地</th>
+		<td th:text="*{exhdsd0001022}"></td>
+		<th>医疗机构名称</th>
+		<td th:text="*{exhdsd0001047}"></td>
+	</tr>
+	</tbody>
+</table>
+</html>

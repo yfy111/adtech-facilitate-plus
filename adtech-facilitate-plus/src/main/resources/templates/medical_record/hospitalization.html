@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/static/assets/css/medical_record_mobal/style.css}"/>
+<div class="layui-container">
+    <div class="layui-row">
+        <table th:object="${obj}"  class="tantable">
+            <tbody>
+                <tr>
+                    <td>医疗机构名称</td>
+                    <td th:text="*{exhdsd0202239}"></td>
+                    <td>科室名称</td>
+                    <td th:text="*{exhdsd0202314}"></td>
+                    <td>门（急）诊号</td>
+                    <td th:text="*{hdsd0003025}"></td>
+                    <td>健康卡号</td>
+                    <td th:text="*{exhdsd0202249}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="border: 1px #3F3F3F solid;width: 100%;"></div>
+    <div class="layui-row">
+        <table th:object="${obj}"  class="tantable">
+            <tbody>
+            <tr>
+                <td>入院日期时间</td>
+                <td th:text="*{hdsd0012096}"></td>
+                <td>入院科别</td>
+                <td th:text="*{hdsd0012095}"></td>
+                <td>入院病房</td>
+                <td th:text="*{hdsd0012094}"></td>
+                <td>出院日期时间</td>
+                <td th:text="*{hdsd0011019}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="layui-row">
+            <table th:object="${obj}"  class="tantable">
+                <tbody>
+                <tr>
+                    <td>患者姓名</td>
+                    <td th:text="*{hdsd0011110}"></td>
+                    <td>出生日期</td>
+                    <td th:text="*{exhdsd0202261}"></td>
+                    <td>年龄</td>
+                    <td th:text="*{hdsd0011079}"></td>
+                    <td>性别</td>
+                    <td th:text="*{exhdsd0202260}"></td>
+                    <td>籍贯</td>
+                    <td th:text="*{exhdsd0202287}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="border: 1px #3F3F3F solid;width: 100%;"></div>
+        <div class="layui-row">
+            <table th:object="${obj}"  class="tantable">
+                <tr>
+                    <td>民族</td>
+                    <td th:text="*{exhdsd0202263}"></td>
+                    <td>身份证件号码</td>
+                    <td th:text="*{exhdsd0202258}"></td>
+                    <td>电话号码</td>
+                    <td th:text="*{exhdsd0202257}"></td>
+                </tr>
+                <tr>
+                    <td>实际住院天数</td>
+                    <td th:text="*{hdsd0011087}"></td>
+                    <td>门（急）诊诊断名称</td>
+                    <td th:text="*{hdsd0012083}"></td>
+                    <td>病理诊断名称</td>
+                    <td th:text="*{hdsd0012083}"></td>
+                </tr>
+                <tr>
+                    <td>ABO血型</td>
+                    <td th:text="*{hdsd0012003}"></td>
+                    <td>过敏药物</td>
+                    <td rowspan="3" th:text="*{hdsd0012044}"></td>
+                </tr>
+                <tr>
+                    <td>主要诊断</td>
+                    <td rowspan="3" colspan="5" th:text="*{exhdsd0203148}"></td>
+                </tr>
+                <tr>
+                    <td>手术及操作日期</td>
+                    <td th:text="*{hdsd0011091}"></td>
+                    <td>手术及操作名称</td>
+                    <td th:text="*{hdsd0011090}"></td>
+                    <td>手术者姓名</td>
+                    <td th:text="*{hdsd0011094}"></td>
+                </tr>
+            </table>
+        </div>
+        <div style="border: 1px #3F3F3F solid;width: 100%;"></div>
+        <div class="layui-row">
+            <table th:object="${obj}"  class="tantable">
+                <tr>
+                    <td>麻醉医师姓名</td>
+                    <td th:text="*{hdsd0011074}"></td>
+                    <td>主治医师签名</td>
+                    <td th:text="*{hdsd0012165}"></td>
+                    <td>住院医师签名</td>
+                    <td th:text="*{hdsd0012168}"></td>
+                </tr>
+                <tr>
+                    <td>责任护士签名</td>
+                    <td colspan="5" th:text="*{hdsd0012135}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

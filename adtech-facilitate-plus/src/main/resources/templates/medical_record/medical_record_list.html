@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<table class="layui-table">
+	<thead>
+	<tr>
+		<td th:each="title:${page.getTitle()}" th:text="*{title}"></td>
+	</tr>
+	</thead>
+	
+	<tbody>
+	<tr th:each="row:${page.getList()}">
+		<td th:text="*{row.getCreatedate()}"></td>
+		<td th:text="*{row.getUsername()}"></td>
+		<td th:text="*{row.getIdentityCard()}"></td>
+		<td th:text="*{row.getHospitalName()}"></td>
+		<td>
+			<button th:each="btn:${row.getTypeList()}" th:text="*{btn.getVisitName()}" onclick="queryMedicalRecordDetail(this)" th:value="*{btn.getVisitName() + '(_)' + btn.getExtsid()}"></button>
+		</td>
+	</tr>
+	</tbody>
+	
+	<tfoot>
+	<tr>
+		<td th:colspan="${page.getTitle().size()}">
+			<div th:include="common_page"></div>
+		</td>
+	</tr>
+	</tfoot>
+</table>
+
+<script>
+    function jumpPage(index) {
+        var identity = $("#selectedUserIdentity").val();
+        queryMedicalRecordList(identity, index);
+    }
+</script>
+</html>

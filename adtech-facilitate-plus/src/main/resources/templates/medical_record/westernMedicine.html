@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/static/assets/css/medical_record_mobal/style.css}"/>
+<div class="layui-container">
+    <div class="layui-row">
+        <table  th:object="${info.westernMedicineBaseShowData}" class="tantable">
+            <tbody>
+            <tr>
+                <td>医疗机构</td>
+                <td  th:text="*{exhdsd0202257}"></td>
+                <td>科室名称</td>
+                <td th:text="*{hdsd0004005}"></td>
+                <td>门（急）诊号</td>
+                <td th:text="*{hdsd0004016}"></td>
+                <td>处方编号</td>
+                <td th:text="*{hdsd0004002}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="border: 1px #3F3F3F solid;width: 100%;"></div>
+    <div class="layui-row">
+        <table  th:object="${info.westernMedicineBaseShowData}" class="tantable">
+            <tbody>
+            <tr>
+                <td>患者姓名</td>
+                <td th:text="*{exhdsd0202250}"></td>
+                <td>年龄（岁）</td>
+                <td th:text="*{exhdsd0202253}"></td>
+                <td>性别</td>
+                <td th:text="*{exhdsd0202251}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="border: 1px #3F3F3F solid;width: 100%;"></div>
+    <div class="layui-row">
+        <table  th:object="${info.westernMedicineBaseShowData}" class="tantable">
+            <tbody>
+            <tr>
+                <td>处方开立日期</td>
+                <td th:text="*{hdsd0004006}"></td>
+                <td>处方有效天数</td>
+                <td th:text="*{hdsd0004013}"></td>
+                <!--<td>处方药品组号</td>-->
+                <!--<td th:text="*{exhdsd0202250}"></td>-->
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="layui-row">
+        <table>
+            <tbody>
+            <tr>
+                <td>药物规格</td>
+                <td>剂型代码</td>
+                <td>药物名称</td>
+                <td>次剂量</td>
+                <td>单位</td>
+                <td>使用频次</td>
+                <td>使用途径</td>
+                <td>总剂量</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="border: 1px #3F3F3F solid;width: 100%;"></div>
+    <div class="layui-row"  th:each="item,itemStat:${info.westernMedicineItemShowData}">
+        <table>
+            <tbody>
+            <tr>
+                <td th:text="*{item.hdsd0004021}"></td>
+                <td th:text="*{item.hdsd0004022}"></td>
+                <td th:text="*{item.hdsd0004023}"></td>
+                <td th:text="*{item.hdsd0004024}"></td>
+                <td th:text="*{item.hdsd0004025}"></td>
+                <td th:text="*{item.hdsd0004026}"></td>
+                <td th:text="*{item.exhdsd0201173}"></td>
+                <td th:text="*{item.hdsd0004028}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="border: 1px #3F3F3F solid;width: 100%;"></div>
+    <div class="layui-row">
+        <table th:object="${info.westernMedicineBaseShowData}" class="tantable">
+            <tbody>
+            <tr>
+                <td>处方药品金额</td>
+                <td th:text="*{exhdsd0201147}"></td>
+                <td>处方开立医师签名</td>
+                <td th:text="*{hdsd0004007}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

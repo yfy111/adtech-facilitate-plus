@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/static/css/family_member.css}" />
+
+<table class="layui-table family-member-full-list">
+	<thead>
+	<tr>
+		<td>称谓</td>
+		<td>姓名</td>
+		<td>联系电话</td>
+		<td>操作</td>
+	</tr>
+	</thead>
+	<tbody>
+	<tr th:each="e:${list}">
+		<td th:text="*{e.appellation}"></td>
+		<td th:text="*{e.familyUsername}"></td>
+		<td th:text="*{e.familyUserphone}"></td>
+		<td>
+			<!--<a href="javascript:changeUser(this);" th:value="*{e.getFamilyUserId()}">查看档案</a>-->
+			<!--<a href="javascript:deleteFamilyMember();" th:if="*{e.appellation != '本人'}">删除</a>-->
+			<button type="button" class="layui-btn layui-btn-xs" onclick="changeUser(this)" th:value="*{e.getFamilyUserId() + '-' + e.getAppellation()+ '-' + e.getExtmpi()}">查看档案</button>
+			<button type="button" class="layui-btn layui-btn-xs" onclick="deleteFamilyMember(this)" th:value="*{e.getId()}">删除</button>
+		</td>
+	</tr>
+	</tbody>
+	
+	<tfoot>
+	<tr>
+		<td colspan="4">
+			<button type="button" class="layui-btn layui-btn-xs layui-btn-normal button" onclick="showFamilyMemberAdd()">新增</button>
+		</td>
+	</tr>
+	</tfoot>
+</table>
+</html>

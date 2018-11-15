@@ -1,0 +1,20 @@
+.medical_info_basic_info_data {
+}
+
+.medical_info_basic_info_data th {
+    width: 150px;
+    padding-left: 10px;
+    text-align: left;
+    border: 1px dashed #c9dbec;
+}
+
+.medical_info_basic_info_data td {
+    width: 150px;
+    padding-left: 10px;
+    text-align: left;
+    border: 1px dashed #c9dbec;
+}
+
+.medical_info_basic_info_data th {
+    background-color: #f7f7f7;
+}

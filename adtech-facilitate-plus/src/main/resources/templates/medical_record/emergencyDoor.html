@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/static/assets/css/medical_record_mobal/style.css}" />
+<div>
+    <table th:object="${obj}" class="tantable" lay-size="lg">
+        <tbody>
+            <tr>
+                <td colspan="8"><h2 th:text="*{exhdsd0202239}">门诊病历</h2></td>
+            </tr>
+        <tr>
+            <td>医疗结构名称:</td>
+            <td th:text="*{exhdsd0202239}"></td>
+            <td>科室名称:</td>
+            <td th:text="*{hdsd0002055}"></td>
+            <td>门（急）诊号:</td>
+            <td th:text="*{hdsd0003025}"></td>
+        </tr>
+            <tr>
+                <td>患者姓名:</td>
+                <td th:text="*{exhdsd0202250}"></td>
+                <td>出生日期:</td>
+                <td th:text="*{exhdsd0202252}"></td>
+                <td>年龄:</td>
+                <td th:text="*{exhdsd0202253}"></td>
+                <td>性别:</td>
+                <td th:text="*{exhdsd0202251}"></td>
+            </tr>
+            <tr>
+                <td>就诊日期时间:</td>
+                <td th:text="*{hdsd0003023}"></td>
+                <td>治则治法:</td>
+                <td th:text="*{hdsd0003056}"></td>
+                <td>西医诊断名称:</td>
+                <td rowspan="3" th:text="*{exhdsd0202243}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="border: 1px #3F3F3F solid;width: 100%;" "></div>
+    <table th:object="${obj}" class="tantable lay-size="lg">
+        <tr>
+            <td>中医病名名称:</td>
+            <td th:text="*{chinesedisease}"></td>
+            <td>中医证候名称:</td>
+            <td th:text="*{chinesesymptom}"></td>
+        </tr>
+        <tr>
+            <td>主诉:</td>
+            <td colspan="3" rowspan="3" th:text="*{hdsd0003057}"></td>
+        </tr>
+        <tr>
+            <td>过敏史:</td>
+            <td rowspan="3" th:text="*{hdsd0003014}"></td>
+        </tr>
+        <tr>
+            <td>既往史:</td>
+            <td rowspan="3" th:text="*{history}"></td>
+        </tr>
+        <tr>
+            <td>现病史:</td>
+            <td rowspan="3" th:text="*{hdsd0003064}"></td>
+        </tr>
+        <tr>
+            <td>中医“四诊”观察结果:</td>
+            <td rowspan="3" th:text="*{hdsd0003060}"></td>
+        </tr>
+        <tr>
+            <td>辅助检查项目:</td>
+            <td th:text="*{hdsd0003013}"></td>
+            <td>辅助检查结果:</td>
+            <td th:text="*{hdsd0003012}"></td>
+        </tr>
+    </table>
+    <div style="border: 1px #3F3F3F solid;width: 100%;"></div>
+    <table th:object="${obj}" class="tantable" lay-size="lg">
+        <tr>
+            <td>主治医师名称:</td>
+            <td th:text="*{exhdsd0203052}"></td>
+        </tr>
+    </table>
+</div>

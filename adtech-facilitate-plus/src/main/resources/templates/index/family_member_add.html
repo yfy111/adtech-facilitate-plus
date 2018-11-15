@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/static/css/family_member.css}" />
+
+<form class="layui-form family-member-add-form" action="">
+	<div class="layui-form-item">
+		<label class="layui-form-label">称谓</label>
+		<div class="layui-input-block">
+			<select name="appellation">
+				<option value="CYGX.01">父母</option>
+				<option value="CYGX.02">子女</option>
+				<option value="CYGX.03">配偶</option>
+				<option value="CYGX.04">亲友</option>
+			</select>
+		</div>
+	</div>
+	
+	<div class="layui-form-item">
+		<label class="layui-form-label">姓名</label>
+		<div class="layui-input-block">
+			<input type="text" name="trueName" lay-verify="title" autocomplete="off" placeholder="请输入姓名" class="layui-input name">
+		</div>
+	</div>
+	
+	<div class="layui-form-item">
+		<label class="layui-form-label">身份证号</label>
+		<div class="layui-input-block">
+			<input type="text" name="identityCard" lay-verify="title" autocomplete="off" placeholder="请输入身份证号" class="layui-input identity">
+		</div>
+	</div>
+	
+	<div class="layui-form-item">
+		<label class="layui-form-label">手机号码</label>
+		<div class="layui-input-block">
+			<input type="text" name="userPhone" autocomplete="off" placeholder="请输入手机号码" class="layui-input sms-captcha-input phone" />
+			<button type="button" class="layui-btn layui-btn-primary sms-captcha-button" onclick="sendFamilyMemberAddSmsCaptcha()">发送验证码</button>
+		</div>
+	</div>
+	
+	<div class="layui-form-item">
+		<label class="layui-form-label">短信验证码</label>
+		<div class="layui-input-block">
+			<input type="text" name="phoneCode" autocomplete="off" placeholder="请输入短信验证码" class="layui-input sms-captcha">
+		</div>
+	</div>
+	
+	<div class="layui-form-item">
+		<div class="layui-input-block" style="text-align: right;">
+			<button class="layui-btn" type="button" onclick="doFamilyMemberAdd()">添加</button>
+		</div>
+	</div>
+</form>
+
+<script>
+    layui.use('form', function () {
+        var form = layui.form;
+        form.render();
+    });
+</script>
+</html>

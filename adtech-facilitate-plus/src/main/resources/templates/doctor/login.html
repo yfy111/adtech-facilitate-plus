@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="header::setTitle(${projectName})"></head>
+<link rel="stylesheet" th:href="@{/static/custom/css/login.css}" />
+
+<body>
+<div class="top">
+	<div class="main">
+		<div class="logo"></div>
+	</div>
+</div>
+
+<div class="login-center">
+	<div class="loginbigbox">
+		<div class="login-left">
+			<img class="doctor-scan-qr-code-img" />
+		</div>
+		<div class="login-right">
+			<div class="login-right-name blue">个人健康档案查询登录</div>
+			<div class="layui-tab">
+				<ul class="layui-tab-title login-tab-head">
+					<li class="one layui-this"><i></i>身份证验证登录</li>
+				</ul>
+				
+				<ul class="login-tab-main layui-tab-content">
+					<!-- 姓名、身份证、查询密码登录 -->
+					<li class="layui-tab-item layui-show password-login-container">
+						<div class="inputbox">
+							<input class="imglabel-user" name="realName" autocomplete="false" placeholder="请输入姓名">
+						</div>
+						<div class="inputbox">
+							<input class="imglabel-ID" name="identity" placeholder="请输入身份证">
+						</div>
+						<div class="inputbox">
+							<input class="imglabel-password" type="password" name="password" placeholder="请输入密码">
+						</div>
+						<div class="inputbox">
+							<input class="imglabel-code image-captcha-code" style="width: 60%;" name="smsCaptcha" placeholder="请输入验证码">
+							<img src="/captcha/image" onclick="changeImageCaptcha()" class="image-captcha-img" />
+						</div>
+						<div class="jizhupsw">
+							<input type="checkbox" id="form2-checkbox" lay-skin="primary" onchange="controlSubmitButton(this,'#login2-submit-button')">
+							<label for="form2-checkbox">选中表示已阅读<span class="font-blue">《隐私保护》</span>，并同意条款有关隐私保护要求。</label>
+						</div>
+						<button class="login-btn action-button disabled-button" id="login2-submit-button" disabled="disabled" type="button" onclick="passwordLogin()">登录</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="foot">
+		<div class="main">主办单位：重庆市卫生健康委员会
+			<br>
+			技术支持单位：重庆亚德科技股份有限公司
+		</div>
+	</div>
+</div>
+
+<div th:include="footer::js"></div>
+<script th:src="@{/static/assets/js/doctor.js}"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+.family-member-simple-list a {
+    text-decoration: underline;
+    color: blue;
+}
+
+.family-member-full-list {
+    width: 90%;
+    margin: 10px auto auto;
+}
+
+.family-member-full-list .button {
+    width: 100px;
+    float: right;
+}
+
+.family-member-add-form {
+    width: 80%;
+    margin: 10px auto auto;
+}
+
+.family-member-add-form .sms-captcha-input {
+    width: 80%;
+    float: left;
+}
+
+.family-member-add-form .sms-captcha-button {
+    width: 20%;
+    float: left;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/static/assets/css/medical_record_mobal/style.css}"/>
+<div class="layui-container">
+    <div class="layui-row">
+        <table th:object="${info.inspectionRecordBaseShowData}">
+            <tbody>
+            <tr>
+                <td>患者姓名</td>
+                <td th:text="*{exhdsd0202250}"></td>
+                <td>性别</td>
+                <td th:text="*{exhdsd0202251}"></td>
+                <td>年龄（岁）</td>
+                <td th:text="*{exhdsd0202253}"></td>
+                <td>门（急）诊号</td>
+                <td th:text="*{exhdsd0202247}"></td>
+                <td>病房号</td>
+                <td th:text="*{exhdsd0202193}"></td>
+                <td>病床号</td>
+                <td></td>
+                <td>病区名称</td>
+                <td th:text="*{exhdsd0202216}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="layui-row">
+        <table th:object="${info.inspectionRecordBaseShowData}">
+            <tbody>
+            <tr>
+                <td>科室名称</td>
+                <td th:text="*{exhdsd0202214}"></td>
+                <td>检验报告单编号</td>
+                <td th:text="*{hdsd0005040}"></td>
+                <td>标本类别</td>
+                <td th:text="*{hdsd0005004}"></td>
+                <td>标本采样日期时间</td>
+                <td th:text="*{hdsd0005002}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="border: 1px #3F3F3F solid;width: 100%;"></div>
+    <div class="layui-row">
+        <table>
+            <tbody>
+            <tr>
+                <td>检验项目</td>
+                <td>检验结果</td>
+                <td>单位</td>
+                <td>参考值</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="border: 1px #3F3F3F solid;width: 100%;"></div>
+    <div class="layui-row">
+        <table>
+            <tbody>
+            <tr th:each="item,itemStat:${info.inspectionRecordItemListShowData}">
+                <td th:text="${item.hdsd0005055}"></td>
+                <td th:text="${item.hdsd0005050}"></td>
+                <td th:text="${item.hdsd0005047}"></td>
+                <td th:text="${item.exhdsd0202244}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="border: 1px #3F3F3F solid;width: 100%;"></div>
+    <div class="layui-row">
+        <table th:object="${info.inspectionRecordBaseShowData}">
+            <tbody>
+            <tr>
+                <td>检验报告结果</td>
+                <td th:text="*{hdsd0005042}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="border: 1px #3F3F3F solid;width: 100%;"></div>
+    <div class="layui-row">
+        <table th:object="${info.inspectionRecordBaseShowData}">
+            <tbody>
+            <tr>
+                <td>检验报告科室</td>
+                <td th:text="*{hdsd0005043}"></td>
+                <td>检验报告日期</td>
+                <td th:text="*{hdsd0005044}"></td>
+                <td>检验技师签名</td>
+                <td th:text="*{hdsd0005049}"></td>
+                <td>检查医师签名日期时间</td>
+                <td th:text="*{exhdsd0202231}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

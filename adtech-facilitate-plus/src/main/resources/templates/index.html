@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>便民查询</title>
+	<link rel="stylesheet" th:href="@{/static/assets/vendor/font/iconfont.css}">
+	<link rel="stylesheet" th:href="@{/static/assets/vendor/layui/css/layui.css}">
+	<link rel="stylesheet" th:href="@{/static/assets/css/style.css}">
+	<link rel="stylesheet" th:href="@{/static/assets/css/index.css}">
+	<link rel="stylesheet" th:href="@{/static/assets/css/medical_record.css}" />
+	<link rel="stylesheet" th:href="@{/static/font/iconfont.css}" /><!--图标-->
+	<link rel="stylesheet" th:href="@{/static/css/common.css}" /><!--图标-->
+</head>
+
+<body>
+<div class="top">
+	<div class="main">
+		<div class="logo"></div>
+		<div class="top-right">
+			<a href="javasript:;" class="text-blue" th:text="${loginInfo.name}"></a>
+			欢迎您
+			<ul class="ul-icon">
+				<li>
+					<a href="javascript:showFeedbackQuestionAdd()" class="text-blue"><span class="iconbox"><i class="iconfont icon-wentifankui"></i></span><br>问题反馈</a>
+				</li>
+				<li>
+					<a href="javascript:showChangePassword()" class="text-blue"><span class="iconbox"><i class="iconfont icon-mima"></i></span><br>密码修改</a>
+				</li>
+				<li>
+					<a href="javasript:;" class="text-blue" onclick="quit()"><span class="iconbox"><i class="iconfont icon-tuichu"></i></span><br>退出</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="main">
+	<div class="firstbox">
+		<div class="userpic">
+			<img th:src="@{/static/assets/images/u476.png}">
+		</div>
+		<div class="userinfo">
+			<span>姓名：<i class="text-blue current-selected-user-name" th:text="${loginInfo.getName()}"></i></span>
+			<span>关系：<i class="text-blue current-selected-user-appellation">本人</i></span>
+		</div>
+		<div class="layui-tab querybox">
+			<ul class="layui-tab-title">
+				<li class="layui-this">我要查询</li>
+				<li>授权他查询</li>
+			</ul>
+			<div class="layui-tab-content">
+				<!-- 家庭成员列表 -->
+				<div class="layui-tab-item layui-show">
+					<div class='family-member-simple-list'></div>
+					<a href="javascript:showFamilyMemberFullList();" class="more-member-link">更多</a>
+				</div>
+				
+				<!-- 授权成员列表 -->
+				<div class="layui-tab-item">
+					<div class="authorise-member-simple-list"></div>
+					<a href="#" class="more-member-link">更多</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="firstbox ml10">
+		<div class="title text-blue">健康资讯</div>
+		<ul class="newsbox">
+			<li>
+				<a href="javasript:;"><span class="text-blue">重庆卫生健康公众号：</span><i>2018-10-25 /重庆卫生健康：重庆市卫生健康委员会正式挂牌</i></a>
+			</li>
+			<li>
+				<a href="javasript:;"><span class="text-blue">重庆卫生健康公众号：</span><i>2018-10-25 /重庆卫生健康：重庆市卫生健康委员会正式挂牌.</i></a>
+			</li>
+			<li>
+				<a href="javasript:;"><span class="text-blue">重庆卫生健康公众号：</span><i>2018-10-25 /重庆卫生健康：重磅！贫困地区健康促进三年攻坚行动方案印发</i></a>
+			</li>
+		</ul>
+	</div>
+	<!--左侧菜单-->
+	<div class="layui-tab navlist">
+		<ul class="layui-tab-title check_select">
+			<li class="layui-this icon-show_view_base"><i class="iconfont icon-jiankangdangan"></i>健康档案基本信息</li>
+			<li class="icon-show_view_birth"><i class="iconfont icon-chushengyixuezhengming"></i>出生医学证明</li>
+			<li class="icon-show_view_inoculation"><i class="iconfont icon-yufangjiezhong"></i>预防接种</li>
+			<li class="icon-show_view_new_birth"><i class="iconfont icon-xinshenger"></i>新生儿随访</li>
+			<li class="icon-show_view_birth_hypertension"><i class="iconfont icon-gaoxieya"></i>高血压随访</li>
+			<li class="icon-show_view_birth_diabetes"><i class="iconfont icon-tangniaobing"></i>糖尿病随访</li>
+			<li class="icon-show_view_birth_medical"><i class="iconfont icon-jiuzhenjilu"></i>就诊记录</li>
+		</ul>
+		<div class="layui-tab-content">
+			<!-- 医疗基本信息 -->
+			
+			<div class="layui-tab-item layui-show">
+				<div style="height:30px;width: 100%;color: #4CADC5; font-size: 16px;">
+					<i class="iconfont icon-shenfenzheng" style="left:0;top: -6px;color: #4CADC5;font-size: 25px;">
+					</i> 健康档案基本信息
+				</div>
+				<div class="basic-info-date"></div>
+				<div class="basic-info-data"></div>
+			</div>
+			
+			<!-- 出生医学证明 -->
+			
+			<div class="layui-tab-item">
+				<div style="height:30px;width: 100%;color: #4CADC5; font-size: 16px;">
+					<i class="iconfont icon-chushengyixuezhengming" style="left:0;top: -6px;color: #4CADC5;font-size: 25px;">
+					</i> 出生医学证明
+				</div>
+				<!--<div class='birth-certificate-date'></div>--><!-- 出生医学证明只有一个数据，不存在多个日期的情况 -->
+				<div class='birth-certificate-data'></div>
+			</div>
+			
+			<!-- 预防接种 -->
+			<div class="layui-tab-item">
+				<div style="height:30px;width: 100%;color: #4CADC5; font-size: 16px;">
+					<i class="iconfont icon-yufangjiezhong" style="left:0;top: -6px;color: #4CADC5;font-size: 25px;">
+					</i>预防接种
+				</div>
+<!--
+				<div class="vaccination-userinfo"></div>
+-->
+				<div class="vaccination-data"></div>
+			</div>
+			
+			<!-- 新生儿随访记录 -->
+			<div class="layui-tab-item">
+				<div style="height:30px;width: 100%;color: #4CADC5; font-size: 16px;">
+					<i class="iconfont icon-xinshenger" style="left:0;top: -6px;color: #4CADC5;font-size: 25px;">
+					</i> 新生儿随访
+				</div>
+				<div class="newborn-followup-date"></div>
+				<div class="newborn-followup-data"></div>
+			</div>
+			
+			<!--高血压随访-->
+			<div class="layui-tab-item">
+				<div style="height:30px;width: 100%;color: #4CADC5; font-size: 16px;">
+					<i class="iconfont icon-gaoxieya" style="left:0;top: -6px;color: #4CADC5;font-size: 25px;">
+					</i>高血压随访
+				</div>
+				<div class="hypertension-info-date"></div>
+				<div class="hypertension-info-data"></div>
+			</div>
+			
+			<!--糖尿病-->
+			<div class="layui-tab-item">
+				<div style="height:30px;width: 100%;color: #4CADC5; font-size: 16px;">
+					<i class="iconfont icon-tangniaobing" style="left:0;top: -6px;color: #4CADC5;font-size: 25px;">
+					</i>糖尿病随访
+				</div>
+				<div class="diabetes-info-date"></div>
+				<div class="diabetes-info-data"></div>
+			</div>
+			
+			<!--就诊记录-->
+			<div class="layui-tab-item">
+				<div style="height:30px;width: 100%;color: #4CADC5; font-size: 16px;">
+					<i class="iconfont icon-jiuzhenjilu" style="left:0;top: -6px;color: #4CADC5;font-size: 25px;">
+					</i>就诊记录
+				</div>
+				<div class="medical-record-condition"></div>
+				<div class="medical-record-data"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div style="display: inline-block; line-height: 24px; width: 100%;background: rgba(255,255,255,.3); padding: 20px; margin-top: 20px; text-align: center;font-size: 12px;color: #999">主办单位：重庆市卫生健康委员会
+	<br>
+	技术支持单位：重庆亚德科技股份有限公司
+</div>
+<div class="hidden-data">
+	<!-- 当前选中的用户id -->
+	<input type="hidden" th:value="${selectedUserIdentity}" id="selectedUserIdentity" />
+	<!-- 当前选中的用户和登录用户之间的关系 -->
+	<input type="hidden" th:value="${selectedUserIdAppellation}" id="selectedUserIdAppellation" />
+	<!--MPI-->
+	<input type="hidden" th:value="${selectedUserMPI}" id="selectedUserMPI" />
+</div>
+<div th:include="footer::js"></div>
+<script th:src="@{/static/assets/js/index.js}"></script>
+<script type="text/javascript">
+    function quit() {
+        layer.confirm('你确定退出？', {
+            btn: ['确定', '取消'] //按钮
+        }, function () {
+            $.ajax({
+                url: '/rest/logout',
+                method: 'get',
+                success: function (data) {
+                    location.href = '/login?appId=';
+                }
+            });
+        }, function () {
+            layer.close();
+        });
+    }
+</script>
+</body>
+</html>

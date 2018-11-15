@@ -1,0 +1,12 @@
+.medical-record-condition-life {
+    display: block;
+    margin: auto auto 10px;
+    height: 40px;
+}
+
+.medical-record-condition-life li {
+    float: left;
+    width: 19%;
+    height: 40px;
+    text-align: center;
+}

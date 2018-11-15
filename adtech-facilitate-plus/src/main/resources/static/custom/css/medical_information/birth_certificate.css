@@ -1,0 +1,19 @@
+.medical-info-birth-certificate {
+    border: 1px dashed #c9dbec;
+    margin-top: 10px;
+}
+
+.medical-info-birth-certificate tr {
+    height: 50px;
+}
+
+.medical-info-birth-certificate th, td {
+    width: 150px;
+    padding-left: 10px;
+    text-align: left;
+    border: 1px dashed #c9dbec;
+}
+
+.medical-info-birth-certificate th {
+    background-color: #f7f7f7;
+}

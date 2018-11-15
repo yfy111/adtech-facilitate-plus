@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/static/assets/css/medical_record_mobal/style.css}"/>
+<div class="layui-container">
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <table th:object="${info}"  class="tantable">
+                <tbody>
+                <tr>
+                    <td width="70px;">患者姓名:</td>
+                    <td th:text="*{exhdsd0202250}"></td>
+                    <td width="35px;">性别:</td>
+                    <td th:text="*{exhdsd0202251}"></td>
+                    <td width="75px;">年龄（岁）:</td>
+                    <td th:text="*{exhdsd0202253}"></td>
+                    <td width="95px;">门（急）诊号:</td>
+                    <td th:text="*{exhdsd0202155}"></td>
+                    <td width="55px;">住院号:</td>
+                    <td th:text="*{exhdsd0202156}"></td>
+                    <td width="55px;">病房号:</td>
+                    <td th:text="*{exhdsd1001025}"></td>
+                    <td width="55px;">病床号:</td>
+                    <td th:text="*{exhdsd1001026}"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table th:object="${info}"  class="tantable">
+                <tbody>
+                <td>科室名称:</td>
+                <td th:text="*{hdsd0005036}"></td>
+                <td>检查申请科室:</td>
+                <td th:text="*{exhdsd0202288}"></td>
+                <td>病区名称:</td>
+                <td th:text="*{exhdsd1001024}"></td>
+                <td>检查报告单编号:</td>
+                <td th:text="*{exhdsd0202279}"></td>
+                <td>电子申请单编号:</td>
+                <td th:text="*{hdsd0005016}"></td>
+                </tbody>
+            </table>
+        </div>
+        <div style="border: 1px #3F3F3F solid;width: 100%;"></div>
+        <div class="layui-col-md12">
+            <table th:object="${info}"  class="tantable">
+                <tbody>
+                <tr>
+                    <td>检查方法名称:</td>
+                    <td th:text="*{hdsd0005030}"></td>
+                </tr>
+                <tr>
+                    <td>检查类别:</td>
+                    <td th:text="*{hdsd0005033}"></td>
+                </tr>
+                <tr>
+                    <td>检查项目:</td>
+                    <td th:text="*{exhdsd0202159}"></td>
+                </tr>
+                <tr>
+                    <td>诊疗过程描述:</td>
+                    <td colspan="4" th:text="*{hdsd0005073}"></td>
+                </tr>
+                <tr>
+                    <td>疾病诊断:</td>
+                    <td th:text="*{exhdsd0202169}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="border: 1px #3F3F3F solid;width: 100%;"></div>
+        <div class="layui-col-md12" >
+            <table th:object="${info}" class="tantable"  >
+                <tbody>
+                <tr>
+                    <td>检查日期:</td>
+                    <td th:text="*{hdsd0005034}"></td>
+                    <td>麻醉方法:</td>
+                    <td th:text="*{hdsd0005060}"></td>
+                    <td>麻醉医师签名:</td>
+                    <td colspan="3" th:text="*{hdsd0005062}"></td>
+                </tr>
+                <tr>
+                    <td>报告医师签名:</td>
+                    <td th:text="*{exhdsd0202182}"></td>
+                    <td>检查技师签名:</td>
+                    <td th:text="*{hdsd0005031}"></td>
+                    <td>检查医师签名:</td>
+                    <td th:text="*{hdsd0005038}"></td>
+                    <td>检查医师签名日期时间:</td>
+                    <td th:text="*{exhdsd0202283}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
